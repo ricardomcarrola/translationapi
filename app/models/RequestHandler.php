@@ -1,0 +1,121 @@
+<?php
+
+
+/**
+ * The proper way to go to be a really secure system would be Oauth
+ * for the sake of simplicity i will use a simple solution to generatetokens that a user
+ * can consume for accessing the api or just plain authentication with user and password
+ *
+ * Warning : This is subject to repetition atacks :(
+ * For the sake of simplicity i would say that the API would run on SSL/https also to minize the risks of
+ * network sniffing
+ */
+class RequestHandler extends Phalcon\Http\Request{
+
+  var $type;
+  var $request_parameters = array();
+  var $user = false;
+  var $password=false;
+  var $format = "json";
+  var $translation_string=false;
+  var $token = false;
+  var $signature = false;
+  var $language  = false;
+  const PLAIN     = 1;
+  const TOKEN     = 2;
+
+  /**
+    *  @description Wrap the request on a new object
+    *  @throws invalidRequestException
+    **/
+   function __construct(){
+      $request_parameters = $this->getQuery();
+      $this->type      = array_key_exists("auth_type",$request_parameters) ? $request_parameters["auth_type"] : self::PLAIN;
+      $this->user      = array_key_exists("username",$request_parameters) ? $request_parameters["username"] : false;
+      $this->language      = array_key_exists("language",$request_parameters) ? $request_parameters["language"] : false;
+      $this->password  = array_key_exists("password",$request_parameters) ? $request_parameters["password"] : false;
+      $this->token     = array_key_exists("token",$request_parameters) ? $request_parameters["token"] : false;
+      $this->signature = array_key_exists("signature",$request_parameters) ? $request_parameters["signature"] : false;
+      $this->translation_string = array_key_exists("q",$request_parameters) ? $request_parameters["q"] : false;
+      $this->format = array_key_exists("format",$request_parameters) ? $request_parameters["format"] : 'json';
+
+      /*RC: Type of request validtion*/
+      //PLAIN Request
+      $valid = false;
+      if ($this->user && $this->password){
+        $this->type=self::PLAIN;
+        $valid = true;
+      }
+      //TOKEN Request
+      if ($this->token){
+        $this->type=self::TOKEN;
+        $valid = true;
+      }
+      //SIGNATURE Request
+      if ($this->signature){
+        $this->type=self::SIGNATURE;
+        $valid = true;
+      }
+      if (!$valid){
+        throw new InvalidRequestException();
+      }
+      return true;
+  }
+  /**
+    * @getter for user
+    */
+  public function getUser(){
+    return $this->user;
+  }
+  /**
+    * @getter for format
+    */
+  public function getFormat(){
+    return $this->format;
+  }
+  /**
+    * @getter for password
+    */
+  public function getPassword(){
+    return $this->password;
+  }
+  /**
+    * @getter for type
+    */
+  public function getType(){
+    return $this->type;
+  }
+  /**
+    * @getter for token
+    */
+  public function getToken(){
+    return $this->token;
+  }
+  /**
+    * @getter for language
+    */
+  public function getLanguage(){
+    return $this->language;
+  }
+  /**
+    * @getter for language
+    */
+  public function getTranslationString(){
+    return $this->translation_string;
+  }
+  /**
+    * @getter for signature
+    */
+  public function getSignature(){
+    return $this->signature;
+  }
+  /*
+  Validation of request type
+  */
+  private function isValidRequest($type){
+    if (!$type)
+     return false;
+    return ($type==PLAIN || $type==TOKEN);
+  }
+
+}

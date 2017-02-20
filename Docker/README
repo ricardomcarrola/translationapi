@@ -1,0 +1,17 @@
+docker-compose build
+docker-compose up
+
+# another term window
+docker exec -it docker_mysql_1 mysql -uroot -p*bsolus#bs
+
+# create the db now
+#import it by using
+docker exec -i docker_mysql_1 mysql -uroot -p*bsolus#bs ornimundo_site < default.sql
+
+#run a bash for the web container
+docker exec -it docker_web_1 bash
+
+/usr/local/bin/flyway/flyway
+
+
+docker exec -i docker_mysql_1 mysqldump -uroot -p*bsolus#bs obras360_site
