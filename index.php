@@ -1,7 +1,7 @@
 <?php
 /**
   * 2017
-  * Bootstrap for Venture Oak HR Test
+  * Bootstrap
   * Used Phalcon as ORM + Routing habilities
   *
   * Custom brewed for testing purposes
