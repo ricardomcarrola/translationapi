@@ -38,7 +38,6 @@ class DefaultTranslation extends Translation{
 
     
     function get($text){
-
       if (!$text)
         return "";
       $config = Phalcon\DI::getDefault()->get("config");
