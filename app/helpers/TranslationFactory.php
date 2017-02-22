@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * TranslationFactory Class
+ * 
+ * This class allows to wrap around several implementations of translations acting as a Factory
+ * 
+ * @author  Ricardo Carrola <ricardo.carrola@gmail.com>
+ * @copyright 2017 - Carrola
+ * @since 1.0
+ *
+ */
 class TranslationFactory{
 
   static function get($language){
@@ -14,11 +24,20 @@ class TranslationFactory{
 
 }
 
+/**
+ * DefaultTranslation Class
+ * 
+ * This class currently olds the default implementation for the "default" translation by using a free rest webservice for translating strings
+ * 
+ * @author  Ricardo Carrola <ricardo.carrola@gmail.com>
+ * @copyright 2017 - Carrola
+ * @since 1.0
+ *
+ */
 class DefaultTranslation extends Translation{
 
     
     function get($text){
-
       if (!$text)
         return "";
       $config = Phalcon\DI::getDefault()->get("config");

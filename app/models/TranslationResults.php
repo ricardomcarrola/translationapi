@@ -1,6 +1,20 @@
 <?php
+/**
+ * Translation Cache Model
+ */
+ 
 use Phalcon\Mvc\Model;
 
+/**
+ * Translation Cache Library
+ *
+ * Handles caching the results
+ * 
+ * @author Ricardo Carrola <ricardo.carrola@gmail.com>
+ * 
+ * @since 1.0
+ * 
+ */ 
 class TranslationResults extends model{
 
   var $id = null;
