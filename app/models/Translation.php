@@ -1,4 +1,5 @@
 <?php
+
 /**
   * Generic stuff about Translation comes here!
   */

@@ -1,19 +1,24 @@
 <?php
 /**
+ *  Token Library model
+ */ 
+use Phalcon\Mvc\Model;
+
+/**
  * Token Library
  *
- * This allows to manage tokens  
- * 
+ * Token handler/model implementation
  * 
  * @author Ricardo Carrola <ricardo.carrola@gmail.com>
  * 
  * @since 1.0
  * 
  */ 
-use Phalcon\Mvc\Model;
-
 class Token extends model{
 
+  /**
+   * @var $token string
+   */ 
   var $token;
   var $users_id;
   var $valid_until;
