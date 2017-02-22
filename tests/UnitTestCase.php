@@ -1,0 +1,59 @@
+<?php
+/**
+ * Extend default PHPUNIT Test case for being able to perform tests
+ * 
+ */
+ 
+use Phalcon\Di;
+use Phalcon\Di\FactoryDefault;
+use PHPUnit\Framework\TestCase;
+use Phalcon\Config\Adapter\Ini as IniConfig;
+use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
+
+/**
+ *  Bootstrap for being able to connect to the DI for the application
+ */
+abstract class UnitTestCase extends TestCase
+{
+    /**
+     * @var bool
+     */
+    private $_loaded = false;
+    /**
+     * @var DiInterface
+     */
+    protected $di;
+    
+    public function setUp()
+    {
+       
+        parent::setUp(); 
+        $di = new FactoryDefault();
+
+        $di->set(
+            "config",
+            function () {
+                return new IniConfig("../config.ini");
+            }
+        );
+        
+        $di->set('db', function ()  {
+            $config = Phalcon\DI::getDefault()->get("config");
+            return new DbAdapter(array(
+                'host' => getenv('IP'),//$config->database->host,
+                'username' => getenv('C9_USER'),
+                'password' => '',
+                'dbname' => $config->database->dbname
+            ));
+        });
+        
+        
+        // Add any needed services to the DI here
+        
+        Di::setDefault($di);
+
+        $this->di = $di;
+        
+        $this->_loaded = true;
+    }
+}

@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * Unit testing for Users
+ * 
+ * This will make tests for covering user creation and finding
+ * 
+ * @covers Users
+ */
+ 
+class UsersTest extends \UnitTestCase
+{
+    public function testUsersClass(){
+       $this->assertInstanceOf(
+            Users::class,
+            new Users()
+        );
+            
+    }
+     public function testFindTestUserById(){
+        $user = Users::getUser(null,null,1);
+        $this->assertInstanceOf(
+            Users::class,
+            $user
+        );
+       return $user;
+    }
+    
+    public function testFindTestUserPassword(){
+        $user = Users::getUser("admin","admin");
+        $this->assertInstanceOf(
+            Users::class,
+            $user
+        );
+       return $user;
+    }
+    
+     public function testFindInvalidUser(){
+        $user = Users::getUser("admin","admin2");
+        $this->assertEquals(
+            false,
+            $user
+        );
+    }
+    
+    /**
+     * @depends testFindTestUserPassword 
+     * @depends testFindTestUserById
+     */ 
+    public function testLoginUserId(Users $user){
+        $this->assertEquals(
+            $user->getId(),
+            1
+        );
+    }
+    /**
+     * @depends testFindTestUserPassword 
+     * @depends testFindTestUserById
+     */ 
+    public function testLoginUserUsername(Users $user){
+        $this->assertEquals(
+            $user->getUsername(),
+            "admin"
+        );
+    }
+    
+}

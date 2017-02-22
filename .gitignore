@@ -1,2 +1,4 @@
 tmp/**
 output/**
+composer.lock
+vendor/**
