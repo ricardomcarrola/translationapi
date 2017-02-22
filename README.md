@@ -1,18 +1,30 @@
-# translationapi
+# Simple Translation API
 
-This is a sample application to show the way a new API could be structured. Allows translating strings using 
+ #### Author : Ricardo Carrola <ricardo.carrola@gmail.com> 
+ 
+ &copy; All rights reserved
+
+_This is a sample application to show the way a new API could be structured. Allows translating strings using 
 a free translation engine. Neither Google&trade; Translate neither Microsoft&trade; BING now offer free tiers(at least without credit card registering) for their translations services so I ended up
-using a free webservice for translation.
+using a free webservice for translation._
 
-## Configuration
+## Base Uri for the service
 
-check /config.ini for more configuration options
+https://translationapi-carrola.c9users.io
 
-## Documentation
+It will be public during this stage
 
-Check /docs for more information
+## API Configuration
 
-## Authentication
+Check config.ini for more configuration options
+
+## Online Documentation
+
+Check https://translationapi-carrola.c9users.io/docs for more information
+
+## Authentication information
+
+All requests for the API should go through one of the following authentication schemas
 
 Any request can have a set of
  * username and password
@@ -29,7 +41,12 @@ You can issue a request for a new token and use it in subsequent requests OR mak
 
 For now the supported routes are :
 
- _Note: Format is optional for these both routes_
+ _Note: Format is optional for these both routes and language follows the ISO 639-1 code_
+ 
+ * _GET_ https://translationapi-carrola.c9users.io//translate/?token=[USER_TOKEN]&q=[STRING_TO_TRANSLATE]&language=[LANGUAGE]&format=[OUTPUT]
+ * _GET_ https://translationapi-carrola.c9users.io//token/?username=[username]&password=[password]
+  
+## Sample Valid Calls
 
- * _GET_ /translate/?token=[USER_TOKEN]&q=[STRING_TO_TRANSLATE]&language=[LANGUAGE]&format=[OUTPUT]
- * _GET_ /token/?username=[username]&password=[password]
+* [Translate String "Casa" into English](https://translationapi-carrola.c9users.io/translate?username=admin&password=admin&q=casa&language=pt)
+* [Grab a new Token for admin user](https://translationapi-carrola.c9users.io/token?username=admin&password=admin)
