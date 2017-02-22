@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * Token Library
+ *
+ * This allows to manage tokens  
+ * 
+ * 
+ * @author Ricardo Carrola <ricardo.carrola@gmail.com>
+ * 
+ * @since 1.0
+ * 
+ */ 
 use Phalcon\Mvc\Model;
 
 class Token extends model{
@@ -11,12 +21,36 @@ class Token extends model{
   public function initialize(){
           $this->setSource("tokens");
   }
+  /**
+   * Getter from token
+   * 
+   * @return string Token
+   */
   public function getToken(){
     return $this->token;
   }
+  /**
+   * Getter for User Id associated with this token
+   * 
+   * @return int User Id
+   */
   public function getUserId(){
     return $this->users_id;
   }
+  /**
+   * Getter for Token validity
+   * 
+   * @return int User Id
+   */
+  public function getValidity(){
+    return $this->valid_until;
+  }
+  /**
+   * Checks if the current token is still valid
+   * if it is not valid it will remove it from the db
+   * 
+   * @return bool Token is valid or not
+   */
   public function isValid(){
     if ($this->valid_until <= date("Y-m-d H:i:s")){
       $this->delete();
@@ -24,10 +58,14 @@ class Token extends model{
     }
     return true;
   }
-  public function getValidity(){
-    return $this->valid_until;
-  }
-
+  
+ /**
+  *  Give a specific user this will allow generating/reusing a token from a specific User
+  * 
+  * @return Token The token to be used for authentication
+  * @since 1.0
+  */
+  
   static public function getTokenForUser(Users $user){
     if (!$user)
       return false;
@@ -56,7 +94,9 @@ class Token extends model{
     $this->users_id  = $userid;
     $this->valid_until = date("Y-m-d H:i:s", strtotime('+ '.$valid_until));
   }
-
+  /*
+  Generate a new token
+  */
   private static function generate(){
     return uniqid(md5(date('YmdHis')), true);
   }

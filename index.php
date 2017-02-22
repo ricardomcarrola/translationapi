@@ -28,6 +28,8 @@ $loader->registerDirs(
 $loader->register();
 $di = new FactoryDefault();
 
+
+
 $di->set(
     "config",
     function () {
@@ -38,9 +40,9 @@ $di->set(
 $di->set('db', function ()  {
     $config = Phalcon\DI::getDefault()->get("config");
     return new DbAdapter(array(
-        'host' => $config->database->host,
-        'username' => $config->database->username,
-        'password' => $config->database->password,
+        'host' => getenv('IP'),//$config->database->host,
+        'username' => getenv('C9_USER'),
+        'password' => '',
         'dbname' => $config->database->dbname
     ));
 });
@@ -106,7 +108,7 @@ $app->get(
 $app->notFound(function(){
   $output = new OutputHelper();
   $output->setErrors("ROUTE_NOT_FOUND");
-  $output->send($request->getFormat());
+  $output->send();
 });
 
 $app->handle();

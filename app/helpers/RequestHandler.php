@@ -1,14 +1,15 @@
 <?php
 
-
 /**
- * The proper way to go to be a really secure system would be Oauth
- * for the sake of simplicity i will use a simple solution to generatetokens that a user
- * can consume for accessing the api or just plain authentication with user and password
+ * RequestHandler Class
+ * 
+ * Allows handling of all the api requests wrapping it the right way
+ * 
+ * @author  Ricardo Carrola <ricardo.carrola@gmail.com>
+ * @copyright 2017 - Carrola
+ * @since 1.0
+  *
  *
- * Warning : This is subject to repetition atacks :(
- * For the sake of simplicity i would say that the API would run on SSL/https also to minize the risks of
- * network sniffing
  */
 class RequestHandler extends Phalcon\Http\Request{
 

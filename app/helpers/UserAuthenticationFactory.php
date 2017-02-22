@@ -1,7 +1,32 @@
 <?php
-
+/**
+ *  User Authentication Factory Class
+ *
+ * Allows to call upon a new user object given a specific request
+ * handles all implementation details on how to build the right User object
+ * 
+ * 
+ * * The proper way to go to be a really secure system would be Oauth
+ * * for the sake of simplicity i will use a simple solution to generatetokens that a user
+ * * can consume for accessing the api or just plain authentication with user and password
+ *
+ * * Warning : This is subject to repetition atacks :(
+ * * For the sake of simplicity i would say that the API would run on SSL/https also to minize the risks of
+ * * _network sniffing_
+ * 
+ * @author Ricardo Carrola <ricardo.carrola@gmail.com>
+ * 
+ * @since 1.0
+ * 
+ */ 
 class UserAuthenticationFactory{
   
+  /**
+   * Allows to fetch a new user based on the request object, this wraps the request complexity
+   * 
+   * @return Users $user Returns a new User object or false
+   * 
+   */
   static function getByRequest(RequestHandler $request){
     $user = false;
 
