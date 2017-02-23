@@ -24,6 +24,7 @@ $loader->registerDirs(
         ROOT_PATH,
         ROOT_PATH."/unit/",
         "../app/models/",
+        "../app/exceptions/",
         "../app/helpers/"
     ]
 );

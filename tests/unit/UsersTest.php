@@ -1,5 +1,7 @@
 <?php
 
+namespace tests\Unit;
+
 /**
  * Unit testing for Users
  * 
@@ -12,31 +14,31 @@ class UsersTest extends \UnitTestCase
 {
     public function testUsersClass(){
        $this->assertInstanceOf(
-            Users::class,
-            new Users()
+            \Users::class,
+            new \Users()
         );
             
     }
      public function testFindTestUserById(){
-        $user = Users::getUser(null,null,1);
+        $user = \Users::getUser(null,null,1);
         $this->assertInstanceOf(
-            Users::class,
+            \Users::class,
             $user
         );
        return $user;
     }
     
     public function testFindTestUserPassword(){
-        $user = Users::getUser("admin","admin");
+        $user = \Users::getUser("admin","admin");
         $this->assertInstanceOf(
-            Users::class,
+            \Users::class,
             $user
         );
        return $user;
     }
     
      public function testFindInvalidUser(){
-        $user = Users::getUser("admin","admin2");
+        $user = \Users::getUser("admin","admin2");
         $this->assertEquals(
             false,
             $user
@@ -47,7 +49,7 @@ class UsersTest extends \UnitTestCase
      * @depends testFindTestUserPassword 
      * @depends testFindTestUserById
      */ 
-    public function testLoginUserId(Users $user){
+    public function testLoginUserId(\Users $user){
         $this->assertEquals(
             $user->getId(),
             1
@@ -57,7 +59,7 @@ class UsersTest extends \UnitTestCase
      * @depends testFindTestUserPassword 
      * @depends testFindTestUserById
      */ 
-    public function testLoginUserUsername(Users $user){
+    public function testLoginUserUsername(\Users $user){
         $this->assertEquals(
             $user->getUsername(),
             "admin"

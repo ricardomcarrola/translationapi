@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Invalid request exception
  * 
@@ -7,6 +8,7 @@
  * @since 1.0
  *
  */
-Class InvalidRequestException extends Exception{
+ 
+class InvalidRequestException extends Exception{
   var $message="INVALID_REQUEST";
 }

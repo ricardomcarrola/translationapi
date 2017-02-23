@@ -2,3 +2,5 @@ tmp/**
 output/**
 composer.lock
 vendor/**
+tests/phpunit
+tests/npm-debug.log
