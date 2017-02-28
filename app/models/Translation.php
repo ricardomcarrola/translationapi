@@ -8,7 +8,7 @@ abstract Class Translation{
 
   var $language;
 
-  function __construct($language){
+  function __construct($language='PigLatin'){
     $this->language = $language;
 
   }
