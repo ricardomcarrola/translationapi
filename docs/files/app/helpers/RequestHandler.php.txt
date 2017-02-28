@@ -1,5 +1,4 @@
 <?php
-
 /**
  * RequestHandler Class
  * 

@@ -22,6 +22,7 @@ $loader = new Loader();
 $loader->registerDirs(
     [
        __DIR__."/app/models/",
+       __DIR__."/app/exceptions/",
        __DIR__."/app/helpers/",
     ]
 );
@@ -68,15 +69,17 @@ $app->get(
                     )
           );
         }
+        $output->send($request->getFormat());
+        return true;
       }catch(InvalidRequestException $e){
         $output->setErrors($e->getMessage());
       }catch(InvalidUserException $e){
         $output->setErrors($e->getMessage());
       }catch(Exception $e){
         $output->setErrors($e->getMessage());
-      }finally{
-        $output->send($request->getFormat());
       }
+      $output->send();
+      
     }
 );
 
@@ -93,6 +96,8 @@ $app->get(
           if ($token)
             $output->setResults(array("token"=>$token->getToken(),"validity"=>$token->getValidity()));
         }
+        $output->send($request->getFormat());
+        return true;
       }catch(InvalidRequestException $e){
         $output->setErrors($e->getMessage());
       }catch(InvalidUserException $e){
@@ -100,7 +105,7 @@ $app->get(
       }catch(Exception $e){
         $output->setErrors($e->getMessage());
       }finally{
-        $output->send($request->getFormat());
+        $output->send();
       }
     }
 );

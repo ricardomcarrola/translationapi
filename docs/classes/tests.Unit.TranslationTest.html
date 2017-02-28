@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-922776240"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1181553603"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-922776240" class="accordion-body collapse in">
+            <div id="namespace-1181553603" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-492519843"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-454527043"></a>
                                 <a href="../namespaces/tests.html" style="margin-left: 30px; padding-left: 0">tests</a>
             </div>
-            <div id="namespace-492519843" class="accordion-body collapse ">
+            <div id="namespace-454527043" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1897567526"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-673236211"></a>
                                 <a href="../namespaces/tests.Unit.html" style="margin-left: 30px; padding-left: 0">Unit</a>
             </div>
-            <div id="namespace-1897567526" class="accordion-body collapse ">
+            <div id="namespace-673236211" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -215,13 +215,13 @@
             <div class="row-fluid">
                 <div class="span8 content class">
                     <nav>
-                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                                <a href="../namespaces/tests.Unit.html">\tests\Unit</a> <i class="icon-level-up"></i>
                                             </nav>
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\</small>InvalidUserException</h1>
-                    <p><em>Invalid User exception</em></p>
-                    
+                    <h1><small>\tests\Unit</small>TranslationTest</h1>
+                    <p><em>Unit testing for PigLatin Translations</em></p>
+                    <p>This will make tests for covering user creation and finding</p>
                     
                                         
                     <section id="summary">
@@ -239,10 +239,11 @@
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
-                                                                    <em>No public methods found</em>
+                                                                    <a href="../classes/UnitTestCase.html#method_setUp" class="">setUp()</a><br />
+                                                                    <a href="../classes/tests.Unit.TranslationTest.html#method_testTranslation" class="">testTranslation()</a><br />
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/InvalidUserException.html#property_message" class="">$message</a><br />
+                                                                    <em>No public properties found</em>
                                                             </section>
                             <section class="span4">
                                                                     <em>No constants found</em>
@@ -253,7 +254,7 @@
                                                                     <em>No protected methods found</em>
                                                             </section>
                             <section class="span4">
-                                                                    <em>No protected properties found</em>
+                                                                    <a href="../classes/UnitTestCase.html#property_di" class="">$di</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -264,7 +265,7 @@
                                                                     <em>No private methods found</em>
                                                             </section>
                             <section class="span4">
-                                                                    <em>No private properties found</em>
+                                                                    <a href="../classes/UnitTestCase.html#property__loaded" class="">$_loaded</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -277,14 +278,16 @@
                     
                     <dl>
                         <dt>File</dt>
-                            <dd><a href="../files/app.exceptions.InvalidUserException.html"><div class="path-wrapper">app/exceptions/InvalidUserException.php</div></a></dd>
+                            <dd><a href="../files/tests.unit.TranslationTest.html"><div class="path-wrapper">tests/unit/TranslationTest.php</div></a></dd>
                                                 <dt>Package</dt>
                             <dd><div class="namespace-wrapper">Default</div></dd>
                                                 <dt>Class hierarchy</dt>
                             <dd class="hierarchy">
-                                                                                                                                                                                                                                                                                                
-                                        <div class="namespace-wrapper">\Exception</div>
-                                                                                                    <div class="namespace-wrapper">\InvalidUserException</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                        <div class="namespace-wrapper">\PHPUnit\Framework\TestCase</div>
+                                                                    
+                                        <div class="namespace-wrapper"><a href="../classes/UnitTestCase.html">\UnitTestCase</a></div>
+                                                                                                    <div class="namespace-wrapper">\tests\Unit\TranslationTest</div>
                             </dd>
 
                         
@@ -296,23 +299,7 @@
                     <table class="table table-condensed">
                                             <tr>
                             <th>
-                                author
-                            </th>
-                            <td>
-                                                                    <p>Ricardo Carrola <a href="mailto:ricardo.carrola@gmail.com">ricardo.carrola@gmail.com</a></p>
-                                                            </td>
-                        </tr>
-                                            <tr>
-                            <th>
-                                copyright
-                            </th>
-                            <td>
-                                                                    <p>2017 - Carrola</p>
-                                                            </td>
-                        </tr>
-                                            <tr>
-                            <th>
-                                since
+                                covers
                             </th>
                             <td>
                                                                     
@@ -331,22 +318,24 @@
                 <aside class="span4 detailsbar"></aside>
             </div>
 
-                                    <div class="row-fluid">
+                                                    <div class="row-fluid">
         <div class="span8 content class">
-            <a id="property_message" name="property_message" class="anchor"></a>
+            <a id="property_di" name="property_di" class="anchor"></a>
             <article class="property">
-                <h3 class="public ">$message</h3>
-                <pre class="signature">$message : </pre>
+                <h3 class="protected ">$di</h3>
+                <pre class="signature">$di : \DiInterface</pre>
                 <p><em></em></p>
                 
 
                                 <h4>Type</h4>
-                
+                \DiInterface
                                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                         <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/UnitTestCase.html"><div class="path-wrapper">\UnitTestCase</div></a></dd>
                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -355,17 +344,103 @@
         </aside>
     </div>
 
-                                                            
-                                </div>
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__loaded" name="property__loaded" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_loaded</h3>
+                <pre class="signature">$_loaded : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/UnitTestCase.html"><div class="path-wrapper">\UnitTestCase</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setUp" name="method_setUp" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setUp()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setUp() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/UnitTestCase.html"><div class="path-wrapper">\UnitTestCase</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_testTranslation" name="method_testTranslation" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">testTranslation()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">testTranslation() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
     </section>
 
     <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">InvalidUserException.php</h3>
+            <h3 id="source-view-label">TranslationTest.php</h3>
         </div>
         <div class="modal-body">
-            <pre data-src="../files/app/exceptions/InvalidUserException.php.txt" class="language-php line-numbers"></pre>
+            <pre data-src="../files/tests/unit/TranslationTest.php.txt" class="language-php line-numbers"></pre>
         </div>
     </div>
 
