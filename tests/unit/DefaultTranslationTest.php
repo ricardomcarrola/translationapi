@@ -1,0 +1,33 @@
+<?php
+
+namespace tests\Unit;
+
+/**
+ * Unit testing for PigLatin Translations
+ * 
+ * This will make tests for covering user creation and finding
+ * 
+ * @covers PigLatinTranslation
+ */
+ 
+class DefaultTranslationTest extends \UnitTestCase
+{
+    public function testEnglishTranslation(){
+        
+      $testCases = array(
+        "Casa"=>"House",
+        "Maca"=>"apple",
+        "Cao"=>"dog"
+     );
+      
+
+     $translate = new \DefaultTranslation("en");
+     
+     foreach($testCases as $word=>$translation)    
+       $this->assertEquals(
+            $translation,
+            $translate->get($word,true)
+        );
+            
+    }
+}

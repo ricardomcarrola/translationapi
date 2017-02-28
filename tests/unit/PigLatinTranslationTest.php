@@ -10,7 +10,7 @@ namespace tests\Unit;
  * @covers PigLatinTranslation
  */
  
-class TranslationTest extends \UnitTestCase
+class PigLatinTranslationTest extends \UnitTestCase
 {
     public function testTranslation(){
         
