@@ -48,5 +48,6 @@ For now the supported routes are :
   
 ## Sample Valid Calls
 
-* [Translate String "Casa" into English](https://translationapi-carrola.c9users.io/translate?username=admin&password=admin&q=casa&language=pt)
+* [Translate String "Casa" from PT To EN](https://translationapi-carrola.c9users.io/translate?username=admin&password=admin&q=casa&language=pt)
+* [Translate String "Casa" from PT To Piglatin](https://translationapi-carrola.c9users.io/translate?username=admin&password=admin&q=casa&language=piglatin)
 * [Grab a new Token for admin user](https://translationapi-carrola.c9users.io/token?username=admin&password=admin)
