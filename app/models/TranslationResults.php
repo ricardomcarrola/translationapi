@@ -37,6 +37,9 @@ class TranslationResults extends model{
   public function getValue(){
     return $this->value;
   }
+  public function truncate() {
+    $this->getDi()->getShared('db')->query("truncate table ".$this->getSource());
+ }
   static public function get($key,$language){
     $tr = TranslationResults::findFirst(array(
       "conditions"=>" key=:key: and language=:language:",
