@@ -114,12 +114,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">137</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">117</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -144,33 +144,34 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1276805277"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-435946127"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1276805277" class="accordion-body collapse in">
+            <div id="namespace-435946127" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1544349623"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1084624210"></a>
                                 <a href="../namespaces/tests.html" style="margin-left: 30px; padding-left: 0">tests</a>
             </div>
-            <div id="namespace-1544349623" class="accordion-body collapse ">
+            <div id="namespace-1084624210" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1669461181"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1892061579"></a>
                                 <a href="../namespaces/tests.Unit.html" style="margin-left: 30px; padding-left: 0">Unit</a>
             </div>
-            <div id="namespace-1669461181" class="accordion-body collapse ">
+            <div id="namespace-1892061579" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
                     <ul>
-                                                                                                    <li class="class"><a href="../classes/tests.Unit.TranslationTest.html">TranslationTest</a></li>
+                                                                                                    <li class="class"><a href="../classes/tests.Unit.DefaultTranslationTest.html">DefaultTranslationTest</a></li>
+                                                    <li class="class"><a href="../classes/tests.Unit.PigLatinTranslationTest.html">PigLatinTranslationTest</a></li>
                                                     <li class="class"><a href="../classes/tests.Unit.UsersTest.html">UsersTest</a></li>
                                             </ul>
                 </div>
@@ -220,8 +221,9 @@
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
                     <h1><small>\</small>DefaultTranslation</h1>
-                    <p><em>DefaultTranslation Class</em></p>
-                    <p>This class currently holds the default implementation for the &quot;default&quot; translation by using a free rest webservice for translating strings</p>
+                    <p><em>DefaultTranslation</em></p>
+                    <p>DefaultTranslation Class</p>
+<p>This class currently holds the default implementation for the &quot;default&quot; translation by using a free rest webservice for translating strings</p>
                     
                                         
                     <section id="summary">
@@ -411,16 +413,21 @@
             <article class="method">
                 <h3 class="public ">get()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">get(  <span class="argument">$text</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">get(string  <span class="argument">$text</span>, boolean  <span class="argument">$force = false</span>) </pre>
+                <p><em>Gets the translation</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$text </td>
-                                <td></td>
+                                <td><p>the text to be translated</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$force </td>
+                                <td><p>bypass the cache</p></td>
                             </tr>
                                             </table>
                 
@@ -682,7 +689,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 28th, 2017 at 16:34.
+                    on February 28th, 2017 at 22:07.
                 </section>
             </section>
         </section>

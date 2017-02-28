@@ -1,5 +1,7 @@
 <?php 
 /**
+ * DefaultTranslation
+ * 
  * DefaultTranslation Class
  * 
  * This class currently holds the default implementation for the "default" translation by using a free rest webservice for translating strings
@@ -11,7 +13,13 @@
  */
 class DefaultTranslation extends Translation{
 
-    
+    /**
+     * Gets the translation
+     * 
+     * @param string $text the text to be translated
+     * @param boolean $force bypass the cache
+     * 
+     */
     function get($text,$force=false){
       if (!$text)
         return "";

@@ -55,6 +55,7 @@ $app->setDI($di);
 $app->get(
     "/translate",
     function () {
+      
       $output = new OutputHelper();
       try{
         $request = new RequestHandler();
